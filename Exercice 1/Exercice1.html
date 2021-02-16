@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercice 1</title>
+  </head>
+  <body>
+    <center style="border: 3px solid black; padding: 10px">
+      <button id="droite">Droite</button>
+      <button id="gauche">Gauche</button>
+      <button id="bas">Bas</button>
+      <button id="haut">Haut</button>
+      <button id="etat">Etat de la file d'attente</button>
+      <p>Nombre d'animations dans la file d'attente : <span></span></p>
+      <img
+        src="./Windows10.jpg"
+        style="height: 100px; position: relative"
+        alt="windows 10 image"
+      />
+    </center>
+  </body>
+  <script src="../jquery.js"></script>
+  <script>
+    $("#droite").click(function () {
+      $("img").animate({ left: "+=20px" }, { queue: false, duration: 2000 });
+    });
+    $("#gauche").click(function () {
+      $("img").animate({ left: "-=20px" }, 2000);
+    });
+    $("#bas").click(function () {
+      $("img").animate({ top: "+=20px" }, 2000);
+    });
+    $("#haut").click(function () {
+      $("img").animate({ top: "-=20px" }, 2000);
+    });
+    $("#etat").click(function () {
+      alert($("img").queue("fx"));
+    });
+    setInterval(function () {
+      $("span").text($("img").queue("fx").length);
+    }, 100);
+  </script>
+</html>
