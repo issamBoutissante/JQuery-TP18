@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test</title>
+  </head>
+  <body>
+    <div class="inputs">
+      <input type="radio" value="H" />
+      <input type="radio" value="F" checked />
+    </div>
+  </body>
+  <script src="./jquery.js"></script>
+  <script>
+    $(function () {
+      alert($(".inputs input[checked]").val());
+    });
+  </script>
+</html>
